@@ -1,0 +1,6 @@
+;project ; shell
+package
+;project ; tasks
+package
+;project ; shell
+sbt 
