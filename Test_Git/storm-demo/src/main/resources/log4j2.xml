@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="spring.application.name">
+            huntkey-kylin-manager-module
+        </Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout>
+                <pattern>%d %p [%X{X-HOST-IP}|%X{X-HOST-NAME}|%X{X-REMOTE-HOST-NAME}|${ctx:spring.application.name},%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-Span-Export}] %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+        </Console>
+        <!-- 按日期每天生成log文件 D:\logs\${ctx:spring.application.name}.log  \home\root\${ctx:spring.application.name}-%d{yyyy-MM-dd}.log -->
+        <RollingFile name="RollingFile" fileName="/root/app_logs/storm-kafka-test.log"
+                     filePattern="/root/app_logs/${ctx:spring.application.name}-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>%d %p [%X{X-HOST-IP}|%X{X-HOST-NAME}|%X{X-REMOTE-HOST-NAME}|${ctx:spring.application.name},%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-Span-Export}] %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="24"/>
+                <SizeBasedTriggeringPolicy size="50MB" />
+            </Policies>
+
+            <!-- log文件只打印 INFO 级别信息 -->
+            <Filters>
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <!-- 输出info级别信息 Root 节点不可删除，但是root的level 可以在yml文件中配置-->
+        <Root level="INFO">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="RollingFile" />
+        </Root>
+
+        <!-- 普通logger，可以根据name指定包路径输出信息, 可以没有 -->
+        <Logger name="com.huntkey.sceo.manager" level="INFO" additivity="false">
+            <appender-ref ref="Console" />
+            <appender-ref ref="RollingFile" />
+        </Logger>
+
+    </Loggers>
+</Configuration>

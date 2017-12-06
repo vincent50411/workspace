@@ -1,0 +1,7 @@
+
+spring:
+  cloud:
+    config:
+      profile: dev
+      uri: http://192.168.113.171:8888
+      name: cloud-config-server
