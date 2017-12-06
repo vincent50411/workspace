@@ -1,0 +1,20 @@
+
+
+config:
+  edm:
+    server: http://192.168.113.22:7002
+    contetType: application/json;charset=utf-8
+  orm:
+    server: http://192.168.13.34:2008
+    contetType: application/json;charset=utf-8
+  hive:
+    server: jdbc:hive2://192.168.13.32:10000/default
+    hiveDriver: org.apache.hive.jdbc.HiveDriver
+    userName: root
+    password: Huntkey12
+
+
+logging:
+  config: classpath:log4j2.xml
+  level:
+    root: info

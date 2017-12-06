@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Hadoop-library">
+    <CLASSES>
+      <root url="file://D:/HuntKey/Hadoop/Hadoop/hadoop-2.6.5/hadoop-2.6.5/share/hadoop/yarn" />
+      <root url="file://D:/HuntKey/Hadoop/Hadoop/hadoop-2.6.5/hadoop-2.6.5/share/hadoop/hdfs" />
+      <root url="file://D:/HuntKey/Hadoop/Hadoop/hadoop-2.6.5/hadoop-2.6.5/share/hadoop/common" />
+      <root url="file://D:/HuntKey/Hadoop/Hadoop/hadoop-2.6.5/hadoop-2.6.5/share/hadoop/mapreduce" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/HuntKey/Hadoop/Hadoop/hadoop-2.6.5/hadoop-2.6.5/share/hadoop/common" recursive="false" />
+    <jarDirectory url="file://D:/HuntKey/Hadoop/Hadoop/hadoop-2.6.5/hadoop-2.6.5/share/hadoop/hdfs" recursive="false" />
+    <jarDirectory url="file://D:/HuntKey/Hadoop/Hadoop/hadoop-2.6.5/hadoop-2.6.5/share/hadoop/mapreduce" recursive="false" />
+    <jarDirectory url="file://D:/HuntKey/Hadoop/Hadoop/hadoop-2.6.5/hadoop-2.6.5/share/hadoop/yarn" recursive="false" />
+  </library>
+</component>
